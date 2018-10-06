@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML 5 Canvas</title>
+	<style type="text/css">
+		canvas{
+			border: solid 2px #000;
+		}
+	</style>
+	<script type="text/javascript">
+		var c;
+		var ctx;
+		var playerX = 0;
+		function init(){
+			c = document.getElementById("myCanvas");
+			ctx = c.getContext("2d");
+			draw();
+		}
+		function draw(){
+			setInterval(update, 1000/30);
+		}
+		function update(){
+			ctx.fillStyle="black";
+			ctx.fillRect(0, 0, c.width, c.height);
+			playerX+=0.1;
+			ctx.fillStyle='white';
+			ctx.fillRect(playerX, 0, 40, 40);
+		}
+	</script>
+</head>
+<body onload="init()">
+	<canvas id="myCanvas" width="700" height="500">
+		<p>
+			doesnt support
+		</p>
+	</canvas>
+</body>
+</html>
